@@ -8,28 +8,37 @@
 //  as well as a file to recording.
 
 using System;
+//
+using System.Buffers.Text;
+//
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//
+using System.Windows.Controls;
+//
 using System.Windows;
+using System.Xml.Linq;
 
 namespace LearningLog
 {
     internal class LogEntry
     {
         #region "Variables declarations"
+        //static variables
         private static int count = 0;
         private static DateTime firstEntry;
         private static DateTime newsEntry;
 
+        //Instance variables
         private int logId;
         private DateTime logDate = DateTime.Now;
         private int logWellness;
         private int logQuality;
         private string logNotes = String.Empty;
-        private FileInfo logFile = new FileInfo(String.Empty);
+        private FileInfo logFile;
 
         #endregion
 
@@ -86,7 +95,7 @@ namespace LearningLog
         /// Date indicating when the audio was recorded accessed
         /// </summary>
 
-        public DateTime LogDate { get => logDate; set { logDate = value; } }
+        public DateTime EntryDate { get => logDate; set { logDate = value; } }
 
         /// <summary>
         /// Number based in the "Wellness/Mood" ComboBox;
