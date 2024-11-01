@@ -21,9 +21,12 @@ namespace LearningLog
     {
         bool isRecording = false;
         FileInfo recordingFile;
+
         public MainWindow()
+
         {
             InitializeComponent();
+
         }
 
         private void buttonRecord_Click(object sender, RoutedEventArgs e)
